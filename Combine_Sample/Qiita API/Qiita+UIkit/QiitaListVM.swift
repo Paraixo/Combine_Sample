@@ -12,12 +12,14 @@ protocol QiitaListVMInput {
 }
 
 protocol QiitaListVMOutput {
+    var items: [QiitaItem] {get}
+    var reload: AnyPublisher<Void, Never> {get}
 }
 
 
 protocol QiitaListVMType {
     var input: QiitaListVMInput {get}
-    var outout: QiitaListVMOutput {get}
+    var output: QiitaListVMOutput {get}
 }
 
 
@@ -28,14 +30,24 @@ class QiitaListVM: QiitaListVMInput, QiitaListVMOutput {
     //input
     
     //output
-    
+    var items: [QiitaItem]
+    var reload: AnyPublisher<Void, Never>
     
     
     init() {
+        items = [QiitaItem]()
+        
+        let _reload = PassthroughSubject<Void, Never>()
+        reload = _reload.eraseToAnyPublisher()
+        
+        QiitaRequest.getQiita(param: nil).sink {[unowned self] (items) in
+            self.items = items
+            _reload.send(Void())
+        }.store(in: &cancellables)
     }
 }
 
 extension QiitaListVM: QiitaListVMType {
     var input: QiitaListVMInput {return self}
-    var outout: QiitaListVMOutput {return self}
+    var output: QiitaListVMOutput {return self}
 }

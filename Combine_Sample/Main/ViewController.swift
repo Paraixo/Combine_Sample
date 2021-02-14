@@ -13,7 +13,7 @@ import CombineCocoa
 class ViewController: UIViewController {
     
     var cancellables = Set<AnyCancellable>()
-
+    
     @IBOutlet weak var uikitPushBtn: UIButton!
     @IBOutlet weak var swiftUIPushBtn: UIButton!
     
@@ -24,9 +24,10 @@ class ViewController: UIViewController {
         uikitPushBtn
             .tapPublisher
             .sink { (_) in
-                let storyBoard = UIStoryboard(name: "CountUpViewController", bundle: nil)
-                let vc = storyBoard.instantiateViewController(identifier: "CountUpViewController")
-                self.navigationController?.pushViewController(vc, animated: true)
+//                let storyBoard = UIStoryboard(name: "CountUpViewController", bundle: nil)
+//                let vc = storyBoard.instantiateViewController(identifier: "CountUpViewController")
+//                self.navigationController?.pushViewController(vc, animated: true)
+                self.qiitaListVCPush()
             }.store(in: &cancellables)
         
         
@@ -37,7 +38,13 @@ class ViewController: UIViewController {
                 self.navigationController?.pushViewController(view, animated: true)
             }.store(in: &cancellables)
     }
-
-
+    
+    func qiitaListVCPush() {
+        let storyBoard = UIStoryboard(name: "QiitaListViewController", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "QiitaListViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
