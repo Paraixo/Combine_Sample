@@ -21,7 +21,7 @@ struct QiitaListView: View {
                 }
             }
             
-            Button("Swift Article acquisition") {
+            Button("Swift Article Acquisition") {
                 viewModel.tappedArtcleBtn.send(Void())
             }
         }

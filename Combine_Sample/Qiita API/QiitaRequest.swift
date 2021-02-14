@@ -13,11 +13,8 @@ import SwiftyJSON
 struct QiitaRequest {
     
     static func getQiita(param:[String: Any]?) -> AnyPublisher<[QiitaItem], Never> {
-        let publisher = Future<[QiitaItem], Never> { promise in
+        return Future<[QiitaItem], Never> { promise in
             let urlString = "https://qiita.com/api/v2/items"
-            
-            
-            
             AF.request(urlString, method: .get, parameters: param).responseJSON { (response) in
                 guard let data = response.data else {return}
                 
@@ -29,9 +26,9 @@ struct QiitaRequest {
                 } catch(let error) {
                     print("CatchError:\(error)")
                     //promise(.failure(Never()))
+                    //Neverがよく分かっていない
                 }
             }
         }.eraseToAnyPublisher()
-        return publisher
     }
 }
