@@ -8,11 +8,12 @@
 import Foundation
 import SwiftUI
 import Combine
+import CombineExt
 
 class QiitaListViewModel: ObservableObject  {
     
-    
-    
+    //Input
+    var tappedArtcleBtn = PassthroughSubject<Void, Never>()
     
     //OutPut
     @Published var items = [QiitaItem]()
@@ -21,7 +22,15 @@ class QiitaListViewModel: ObservableObject  {
     
     init() {
         
-        QiitaRequest.getQiita().sink { (result) in
+        tappedArtcleBtn
+            .withLatestFrom(QiitaRequest.getQiita(param: ["query": "swift",
+                                                          "per_page": 20]))
+            .sink { (items) in
+                self.items = items
+        }.store(in: &cancellables)
+        
+        
+        QiitaRequest.getQiita(param: nil).sink { (result) in
             switch result {
             case .finished: break
             case .failure(let error):

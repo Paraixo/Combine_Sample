@@ -12,8 +12,19 @@ struct QiitaListView: View {
     
     @ObservedObject private var viewModel = QiitaListViewModel()
     
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            List {
+                ForEach(viewModel.items, id: \.self) { item in
+                    Text(item.title)
+                }
+            }
+            
+            Button("Swift Article acquisition") {
+                viewModel.tappedArtcleBtn.send(Void())
+            }
+        }
     }
 }
 

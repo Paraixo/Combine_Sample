@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         swiftUIPushBtn
             .tapPublisher
             .sink { (_) in
-                let view = UIHostingController(rootView: CountUpView())
+                let view = UIHostingController(rootView: QiitaListView())
                 self.navigationController?.pushViewController(view, animated: true)
             }.store(in: &cancellables)
     }

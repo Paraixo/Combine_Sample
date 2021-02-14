@@ -39,11 +39,6 @@ class ViewModel: ObservableObject {
     @Published var items: [String] = []
     
     init() {
-//        addBtnTaped.combineLatest($text)
-//            .sink { [weak self] (value) in
-//                print(value.1)
-//                self?.items.append(value.1)
-//            }.store(in: &cancellables)
 
         addBtnTaped.sink {[weak self] _ in
             guard let self = self,

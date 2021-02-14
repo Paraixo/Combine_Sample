@@ -16,7 +16,6 @@ import Combine
 class CountUpViewModel: ObservableObject {
     
     
-    //Input定義だけならProtocolで分ける？
     class Input {
         let tapCountBtn = PassthroughSubject<Void, Never>()
         let tapResetBtn = PassthroughSubject<Void, Never>()

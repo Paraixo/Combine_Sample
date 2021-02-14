@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct  QiitaItem: Codable {
+struct  QiitaItem: Codable, Hashable {
     let title: String
     let url: String
 }

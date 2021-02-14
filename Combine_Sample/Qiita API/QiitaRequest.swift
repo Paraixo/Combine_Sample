@@ -8,22 +8,27 @@
 import Foundation
 import Alamofire
 import Combine
+import SwiftyJSON
 
 struct QiitaRequest {
     
-    static func getQiita() -> AnyPublisher<[QiitaItem], Error> {
-        let publisher = Future<[QiitaItem], Error> { promise in
+    static func getQiita(param:[String: Any]?) -> AnyPublisher<[QiitaItem], Never> {
+        let publisher = Future<[QiitaItem], Never> { promise in
             let urlString = "https://qiita.com/api/v2/items"
             
-            AF.request(urlString).responseJSON { (response) in
+            
+            
+            AF.request(urlString, method: .get, parameters: param).responseJSON { (response) in
                 guard let data = response.data else {return}
                 
+                let json = try! JSON(data: data)
+                print(json)
                 do {
-                    let qiitaItem = try JSONDecoder().decode(QiitaItem.self, from: data)
-                    promise(.success([qiitaItem]))
+                    let qiitaItem = try JSONDecoder().decode([QiitaItem].self, from: data)
+                    promise(.success(qiitaItem))
                 } catch(let error) {
-                    print("Error:\(error)")
-                    promise(.failure(error))
+                    print("CatchError:\(error)")
+                    //promise(.failure(Never()))
                 }
             }
         }.eraseToAnyPublisher()

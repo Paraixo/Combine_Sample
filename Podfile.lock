@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (5.4.1)
   - CombineCocoa (0.2.2)
+  - CombineExt (1.2.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - CombineCocoa
+  - CombineExt
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - CombineCocoa
+    - CombineExt
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   CombineCocoa: 66c79441761907c096ecbd0021cefd8566acaf06
+  CombineExt: f6ad3c8e9a0c85f06e5c66ddd85eb32875d906d2
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: d4e57a27c5717444a45e2ac5403400e7cfa9bf9b
+PODFILE CHECKSUM: ca848e23a433d08dfaa095d01ddff1f1ef9cb596
 
 COCOAPODS: 1.10.0
