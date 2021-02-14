@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.4.1)
   - CombineCocoa (0.2.2)
 
 DEPENDENCIES:
+  - Alamofire
   - CombineCocoa
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CombineCocoa
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   CombineCocoa: 66c79441761907c096ecbd0021cefd8566acaf06
 
-PODFILE CHECKSUM: ed8e613d699f57b2ad3a1c1e824294140cbdcf63
+PODFILE CHECKSUM: d4e57a27c5717444a45e2ac5403400e7cfa9bf9b
 
 COCOAPODS: 1.10.0

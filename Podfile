@@ -7,6 +7,7 @@ target 'Combine_Sample' do
 
   # Pods for Combine_Sample
   pod 'CombineCocoa'
+  pod 'Alamofire'
 
   target 'Combine_SampleTests' do
     inherit! :search_paths
