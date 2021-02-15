@@ -59,6 +59,7 @@
 /* Begin PBXFileReference section */
 		1FFF886A290CC2A063137A9F /* Pods_Combine_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Combine_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		207FC1EB88051A37176FC3CF /* Pods-Combine_SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Combine_SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-Combine_SampleTests/Pods-Combine_SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F021D8D25DAD16B003DAF90 /* CombineOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2F05C3E425D946CF00B19580 /* QiitaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaResponse.swift; sourceTree = "<group>"; };
 		2F05C3EC25D94BD100B19580 /* QiitaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaRequest.swift; sourceTree = "<group>"; };
 		2FB5585F25D590570094A978 /* TextFieldSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSampleView.swift; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 		2FFE13F725D464B5005C8043 /* Combine_Sample */ = {
 			isa = PBXGroup;
 			children = (
+				2F021D8D25DAD16B003DAF90 /* CombineOperator.playground */,
 				2FFE13F825D464B5005C8043 /* AppDelegate.swift */,
 				2FFE13FA25D464B5005C8043 /* SceneDelegate.swift */,
 				2FFE151325D53E4A005C8043 /* Binding+Extension.swift */,
