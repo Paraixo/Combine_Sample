@@ -20,6 +20,7 @@
 		2FB5590F25D945570094A978 /* QiitaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB5590E25D945570094A978 /* QiitaListView.swift */; };
 		2FB5591425D945660094A978 /* QiitaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB5591325D945660094A978 /* QiitaListViewModel.swift */; };
 		2FED1CBC25DC3C88004CF731 /* CountUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED1CBB25DC3C88004CF731 /* CountUpView2.swift */; };
+		2FED1CCC25DC56B3004CF731 /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED1CCB25DC56B3004CF731 /* CustomPopupView.swift */; };
 		2FFE13F925D464B5005C8043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE13F825D464B5005C8043 /* AppDelegate.swift */; };
 		2FFE13FB25D464B5005C8043 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE13FA25D464B5005C8043 /* SceneDelegate.swift */; };
 		2FFE13FD25D464B5005C8043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE13FC25D464B5005C8043 /* ViewController.swift */; };
@@ -75,6 +76,7 @@
 		2FB5590E25D945570094A978 /* QiitaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListView.swift; sourceTree = "<group>"; };
 		2FB5591325D945660094A978 /* QiitaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListViewModel.swift; sourceTree = "<group>"; };
 		2FED1CBB25DC3C88004CF731 /* CountUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUpView2.swift; sourceTree = "<group>"; };
+		2FED1CCB25DC56B3004CF731 /* CustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 		2FFE13F525D464B5005C8043 /* Combine_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combine_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFE13F825D464B5005C8043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFE13FA25D464B5005C8043 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,14 @@
 			path = CombineSample;
 			sourceTree = "<group>";
 		};
+		2FED1CD325DC56B8004CF731 /* ViewSample */ = {
+			isa = PBXGroup;
+			children = (
+				2FED1CCB25DC56B3004CF731 /* CustomPopupView.swift */,
+			);
+			path = ViewSample;
+			sourceTree = "<group>";
+		};
 		2FFE13EC25D464B5005C8043 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +262,7 @@
 				2FFE13FA25D464B5005C8043 /* SceneDelegate.swift */,
 				2FFE151325D53E4A005C8043 /* Binding+Extension.swift */,
 				2F3BCBEC25DC36AA00A0F7D9 /* ViewModelProtocol.swift */,
+				2FED1CD325DC56B8004CF731 /* ViewSample */,
 				2FED1CCA25DC55F8004CF731 /* CombineSample */,
 				2FFE140325D464B5005C8043 /* LaunchScreen.storyboard */,
 				2FFE140625D464B5005C8043 /* Info.plist */,
@@ -622,6 +633,7 @@
 				2FFE149625D4713C005C8043 /* CountUpViewController.swift in Sources */,
 				2FB558F825D944E80094A978 /* QiitaListViewController.swift in Sources */,
 				2FFE149725D4713C005C8043 /* CountUpVM.swift in Sources */,
+				2FED1CCC25DC56B3004CF731 /* CustomPopupView.swift in Sources */,
 				2FB5586525D590E30094A978 /* TextFieldSampleViewModel.swift in Sources */,
 				2FB5591425D945660094A978 /* QiitaListViewModel.swift in Sources */,
 				2F05C3ED25D94BD100B19580 /* QiitaRequest.swift in Sources */,
