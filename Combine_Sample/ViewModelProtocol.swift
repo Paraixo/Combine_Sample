@@ -40,6 +40,7 @@ protocol OutputObject: ObservableObject {
 
 @propertyWrapper struct BindableObject<T: BindingObject> {
 
+    //ここの部分の意味がわからん
     @dynamicMemberLookup struct Wrapper {
         fileprivate let binding: T
         subscript<Value>(dynamicMember keyPath: ReferenceWritableKeyPath<T, Value>) -> Binding<Value> {

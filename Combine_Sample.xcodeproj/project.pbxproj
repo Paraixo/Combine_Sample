@@ -193,6 +193,24 @@
 			path = "Qiita+UIkit";
 			sourceTree = "<group>";
 		};
+		2FED1CC425DC3E00004CF731 /* CountUp */ = {
+			isa = PBXGroup;
+			children = (
+				2F3BCBDF25DC35BD00A0F7D9 /* BadPattern */,
+			);
+			path = CountUp;
+			sourceTree = "<group>";
+		};
+		2FED1CC625DC3E19004CF731 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				2FED1CC425DC3E00004CF731 /* CountUp */,
+				2FFE147D25D470A3005C8043 /* Todo Sample */,
+				2FB5586C25D591C70094A978 /* TF Sample */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
 		2FFE13EC25D464B5005C8043 = {
 			isa = PBXGroup;
 			children = (
@@ -226,8 +244,7 @@
 				2FFE142B25D46503005C8043 /* Main */,
 				2FB5590125D9450C0094A978 /* Qiita API */,
 				2FFE146D25D47013005C8043 /* CountUp Sample */,
-				2FFE147D25D470A3005C8043 /* Todo Sample */,
-				2FB5586C25D591C70094A978 /* TF Sample */,
+				2FED1CC625DC3E19004CF731 /* Samples */,
 				2FFE140325D464B5005C8043 /* LaunchScreen.storyboard */,
 				2FFE140625D464B5005C8043 /* Info.plist */,
 			);
@@ -265,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				2F3BCBE025DC35D300A0F7D9 /* GoodPattern */,
-				2F3BCBDF25DC35BD00A0F7D9 /* BadPattern */,
 			);
 			path = "CountUp SwiftUI";
 			sourceTree = "<group>";

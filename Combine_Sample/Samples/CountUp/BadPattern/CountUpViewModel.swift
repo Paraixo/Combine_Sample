@@ -38,24 +38,17 @@ class CountUpViewModel: ObservableObject {
         self.output = Output()
         
         var count = 0
-        let _countSubject = PassthroughSubject<Int, Never>()
         
         input.tapCountBtn.sink { (_) in
             print("countupBtn")
             count += 1
-            _countSubject.send(count)
+            self.countText = "\(count)"
         }.store(in: &cancellables)
         
         input.tapResetBtn.sink { (_) in
             print("resetBtn")
             count = 0
-            _countSubject.send(count)
-        }.store(in: &cancellables)
-        
-        _countSubject.sink {[unowned self] value in
-            count = value
             self.countText = "\(count)"
-            //print("sink",output.countText)
         }.store(in: &cancellables)
     }
     
