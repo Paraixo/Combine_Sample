@@ -211,6 +211,17 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
+		2FED1CCA25DC55F8004CF731 /* CombineSample */ = {
+			isa = PBXGroup;
+			children = (
+				2FFE142B25D46503005C8043 /* Main */,
+				2FB5590125D9450C0094A978 /* Qiita API */,
+				2FFE146D25D47013005C8043 /* CountUp Sample */,
+				2FED1CC625DC3E19004CF731 /* Samples */,
+			);
+			path = CombineSample;
+			sourceTree = "<group>";
+		};
 		2FFE13EC25D464B5005C8043 = {
 			isa = PBXGroup;
 			children = (
@@ -241,10 +252,7 @@
 				2FFE13FA25D464B5005C8043 /* SceneDelegate.swift */,
 				2FFE151325D53E4A005C8043 /* Binding+Extension.swift */,
 				2F3BCBEC25DC36AA00A0F7D9 /* ViewModelProtocol.swift */,
-				2FFE142B25D46503005C8043 /* Main */,
-				2FB5590125D9450C0094A978 /* Qiita API */,
-				2FFE146D25D47013005C8043 /* CountUp Sample */,
-				2FED1CC625DC3E19004CF731 /* Samples */,
+				2FED1CCA25DC55F8004CF731 /* CombineSample */,
 				2FFE140325D464B5005C8043 /* LaunchScreen.storyboard */,
 				2FFE140625D464B5005C8043 /* Info.plist */,
 			);
