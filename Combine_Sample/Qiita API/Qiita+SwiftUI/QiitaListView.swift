@@ -16,13 +16,13 @@ struct QiitaListView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(viewModel.items, id: \.self) { item in
+                ForEach(viewModel.binding.items, id: \.self) { item in
                     Text(item.title)
                 }
             }
             
             Button("Swift Article Acquisition") {
-                viewModel.tappedArtcleBtn.send(Void())
+                viewModel.input.tappedArtcleBtn.send(Void())
             }
         }
     }

@@ -10,33 +10,37 @@ import SwiftUI
 import Combine
 import CombineExt
 
-class QiitaListViewModel: ObservableObject  {
+class QiitaListViewModel: ViewModelObject {
     
-    //Input
-    var tappedArtcleBtn = PassthroughSubject<Void, Never>()
     
-    var _tappedArtcleBtn = PassthroughSubject<PassthroughSubject<Void, Never>, Never>()
+    final class Input: InputObject {
+        var tappedArtcleBtn = PassthroughSubject<Void, Never>()
+    }
     
-    //OutPut
-    @Published var items = [QiitaItem]()
+    final class Binding: BindingObject {
+        @Published var items = [QiitaItem]()
+    }
+    
+    final class Output: OutputObject {
+        
+    }
+    
+    let input: Input
+    @BindableObject private(set) var binding: Binding
+    let output: Output
     
     var cancellables = Set<AnyCancellable>()
     
     init() {
+        let input = Input()
+        let binding = Binding()
+        let output = Output()
         
-        let _tappedArtcleBtn = PassthroughSubject<PassthroughSubject<Void, Never>, Never>()
-        
-        _tappedArtcleBtn.switchToLatest()
-            .sink { (_) in
-                
-            }.store(in: &cancellables)
-        
-        
-        tappedArtcleBtn
+        let _ = input.tappedArtcleBtn
             .withLatestFrom(QiitaRequest.getQiita(param: ["query": "swift",
                                                           "per_page": 20]))
             .sink { (items) in
-                self.items = items
+                binding.items = items
             }.store(in: &cancellables)
         
         
@@ -46,8 +50,12 @@ class QiitaListViewModel: ObservableObject  {
             case .failure(let error):
                 print("GetQiitaError:",error)
             }
-        } receiveValue: { [self] qiitaitem in
-            self.items = qiitaitem
+        } receiveValue: { qiitaitem in
+            binding.items = qiitaitem
         }.store(in: &cancellables)
+        
+        self.input = input
+        self.binding = binding
+        self.output = output
     }
 }
