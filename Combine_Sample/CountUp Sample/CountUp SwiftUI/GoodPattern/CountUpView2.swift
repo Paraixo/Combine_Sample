@@ -2,16 +2,16 @@
 //  CountUpView2.swift
 //  Combine_Sample
 //
-//  Created by 服部翼 on 2021/02/11.
+//  Created by 服部翼 on 2021/02/17.
 //
 
 import SwiftUI
 import Combine
 
-struct CountUpView: View {
+struct CountUpView2: View {
     var cancellables = Set<AnyCancellable>()
     
-    @ObservedObject var viewModel = CountUpViewModel()
+    @ObservedObject var viewModel = CountUpViewModel2()
     
     var body: some View {
         VStack {
@@ -46,7 +46,7 @@ struct CountUpView: View {
                 })
             }
             
-            Text(viewModel.countText)
+            Text(viewModel.binding.countText)
                 .padding(.top, 60.0)
                 .font(.title)
         }
@@ -55,7 +55,7 @@ struct CountUpView: View {
 
 struct CountUpView2_Previews: PreviewProvider {
     static var previews: some View {
-        CountUpView()
+        CountUpView2()
     }
 }
 

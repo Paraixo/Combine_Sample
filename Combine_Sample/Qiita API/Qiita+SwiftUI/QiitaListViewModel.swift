@@ -15,6 +15,8 @@ class QiitaListViewModel: ObservableObject  {
     //Input
     var tappedArtcleBtn = PassthroughSubject<Void, Never>()
     
+    var _tappedArtcleBtn = PassthroughSubject<PassthroughSubject<Void, Never>, Never>()
+    
     //OutPut
     @Published var items = [QiitaItem]()
     
@@ -22,12 +24,20 @@ class QiitaListViewModel: ObservableObject  {
     
     init() {
         
+        let _tappedArtcleBtn = PassthroughSubject<PassthroughSubject<Void, Never>, Never>()
+        
+        _tappedArtcleBtn.switchToLatest()
+            .sink { (_) in
+                
+            }.store(in: &cancellables)
+        
+        
         tappedArtcleBtn
             .withLatestFrom(QiitaRequest.getQiita(param: ["query": "swift",
                                                           "per_page": 20]))
             .sink { (items) in
                 self.items = items
-        }.store(in: &cancellables)
+            }.store(in: &cancellables)
         
         
         QiitaRequest.getQiita(param: nil).sink { (result) in
